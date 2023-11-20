@@ -18,6 +18,7 @@ function bubbleSort_1(array){
     return array
 }
 
+//===========================================================================
 
 //descending
 function descendingBubble(array){
@@ -39,6 +40,7 @@ function descendingBubble(array){
     return array
 }
 
+//=============================================================================
 
 //merge and sort
 function sortAndMerge2Array(arr1,arr2){

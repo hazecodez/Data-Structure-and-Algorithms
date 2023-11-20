@@ -4,15 +4,15 @@ function insertionSort(array){
         let j = i - 1;
         while(j>=0 && curr < array[j]){
             array[j+1] = array[j]
-            array[j] = curr;
             j--
         }
+        array[j+1] = curr;
     }
     return array
 }
 console.log(insertionSort([8,9,5,8,1,4,3]));
 
-
+//================================================================================
 
 //merge two arrays,sort and return unique
 function mergeInsertion(array){
