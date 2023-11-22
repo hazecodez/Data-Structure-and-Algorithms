@@ -11,6 +11,17 @@ class Queue{
     print(){
         console.log(this.items);
     }
+    peek(){
+        if(!this.isEmpty()){
+            return this.items[0]
+        } return null
+    }
+    isEmpty(){
+        return this.size === 0
+    }
+    size(){
+        return this.items.length
+    }
 }
 const queue = new Queue()
 queue.enqueue(10)
@@ -18,4 +29,4 @@ queue.enqueue(20)
 queue.enqueue(30)
 queue.print()
 queue.dequeue()
-queue.print()
+console.log(queue.peek());
