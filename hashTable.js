@@ -16,6 +16,7 @@ class HashTable{
         const index = this.hash(key);
         this.table[index] = value;
     }
+    //to display hashtable
     display(){
         for(let i=0;i<this.table.length;i++){
             if(this.table[i]){
@@ -23,10 +24,12 @@ class HashTable{
             }
         }
     }
+    //to get specified value with given key
     get(key){
         const index = this.hash(key)
         console.log(this.table[index]);
     }
+    //to remove key value pair in hashtable
     remove(key){
         const index = this.hash(key);
         this.table[index] = undefined;
@@ -39,3 +42,4 @@ table.display()
 table.get("name")
 table.remove("author")
 table.display()
+
