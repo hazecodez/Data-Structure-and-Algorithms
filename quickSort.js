@@ -21,7 +21,7 @@ console.log(sortQuick(array));
 
 //=========================================================================================
 
-//quickS0rt without create new arrays
+//quickSort without create new arrays
 
 function quickSort(arr, left = 0, right = arr.length - 1) {
     if (left < right) {

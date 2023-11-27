@@ -1,21 +1,36 @@
-function selection_1(array){
-    let j = 0;
-    let small = array[0]
-    let index = 0;
-    for(let i=j;i<array.length;i++){
-        if(array[i] < small){
-            small = array[i]
-            index = i
+//ascending
+let arr = [9,8,7,6,5,4,3]
+function ascending(arr){
+    for(let i=0;i<arr.length-1;i++){
+        let minIdx = i
+        for(let j=i+1;j<arr.length;j++){
+            if(arr[j] < arr[minIdx]){
+                minIdx = j
+            }
         }
-        if(i == array.length - 1){
-            array[index] = array[j]
-            array[j] = small;
-            i = j;
-            j++;
-        }
+        let temp = arr[minIdx]
+        arr[minIdx] = arr[i]
+        arr[i] = temp;
     }
-    return array
+    console.log(arr);
 }
-let array = [4,55,1,33,7,8,9,12]
-console.log(selection_1(array));
+
+//descending====
+function reverse(arr){
+    for(let i=0;i<arr.length-1;i++){
+        let minIdx = i;
+        for(let j=i+1;j<arr.length;j++){
+            if(arr[j] > arr[minIdx]){
+                minIdx = j;
+            }
+        }
+        let temp = arr[minIdx];
+        arr[minIdx] = arr[i];
+        arr[i] = arr[minIdx]
+    }
+    console.log(arr);
+}
+reverse(arr)
+ascending(arr)
+
 

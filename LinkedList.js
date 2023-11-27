@@ -159,17 +159,31 @@ class Node {
       }
     }
   }
+
+  function merge(list,list1){
+    list.tail.next = list1.head
+    list.tail = list1.tail;
+    list1.head = list.head;
+  }
   
   const list = new LinkedList
+  const list1 = new LinkedList
   
   list.prepend(10)
   list.prepend(20)
   list.prepend(30)
   list.prepend(40)
   list.append(99)
-  list.print()
-  list.removeFront()
-  list.print()
-  list.removeEnd()
-  list.print()
-  
+  list1.prepend(5)
+  list1.prepend(8)
+  list1.prepend(2)
+  list1.prepend(7)
+  list1.append(3)
+  // list.print()
+  // list.removeFront()
+  // list.print()
+  // list.removeEnd()
+  // list.print()
+  // list1.print()
+  merge(list,list1)
+  list1.print()
