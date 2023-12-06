@@ -63,14 +63,38 @@ class trieTree {
             this.displayTrie(child , prefix + char)
         }
     }
-    
+
+    prefix(word) {
+        let current = this.root;
+        let curr ='';
+        for(let i=0;i<word.length;i++){
+            if(!current.children.has(word[i])) {
+                return []
+            }
+            current = current.children.get(word[i])
+            curr += word[i]
+        }
+        let list = [];
+        this.suggest(current, list, curr)
+        return list;
+    }
+    suggest(root, list, curr){
+        if(root.wordEnd){
+            list.push(curr)
+        }
+        for(let [char,child] of root.children) {
+            this.suggest(child, list , curr+char)
+        }
+    }
 }
 const tries = new trieTree()
-// tries.insert('hello')
-// tries.insert('hashir')
-// // tries.remove('hashir')
+tries.insert('hello')
+tries.insert('hashir')
+tries.insert('hola')
+console.log(tries.prefix('he'));
+// tries.remove('hashir')
 
-// tries.display()
+tries.display()
 
 
 ///========================================
@@ -167,14 +191,14 @@ class Trie {
     }
 }
 
-// Example usage:
-const trie = new Trie();
-trie.insert('hello');
+
+// const trie = new Trie();
+// trie.insert('hello');
 // trie.insert('hashir');
 // trie.insert('world');
 
-// console.log("Search 'hashir':", trie.search('hashir')); // true
-// console.log("Search 'hi':", trie.search('hi')); // false
+// console.log("Search 'hashir':", trie.search('hashir'));
+// console.log("Search 'hi':", trie.search('hi'));
 
 // console.log("Words in the trie:");
 // trie.display();
@@ -184,3 +208,4 @@ trie.insert('hello');
 
 // console.log("Words in the trie after removal:");
 // trie.display();
+
