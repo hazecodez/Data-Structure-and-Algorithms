@@ -162,6 +162,10 @@ class BinarySearchTree{
         }
         return root
     }
+    maxDepth(root) {
+        if(root === null) return 0
+        return Math.max(this.maxDepth(root.left)+1,this.maxDepth(root.right)+1)
+    }
 
 }
 const bst = new BinarySearchTree()
@@ -171,9 +175,11 @@ bst.insert(5);
 bst.insert(15);
 bst.insert(7);
 bst.insert(3)
+// bst.inOrder(bst.root)
+console.log(bst.maxDepth(bst.root));
 
-bst.delete(15)
-bst.levelOrder(bst.root)
+// bst.delete(15)
+// bst.levelOrder(bst.root)
 // bst.levelOrder()
 // console.log(bst.minValue(bst.root));
 // console.log(bst.maxValue(bst.root));
