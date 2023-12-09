@@ -97,7 +97,7 @@
   
 class Graph {
     constructor() {
-      this.adjacencyList = new Map();
+      this.adjacencyList = new Map(); 
     }
   
     addVertex(vertex) {

@@ -174,10 +174,13 @@ bst.insert(10);
 bst.insert(5);
 bst.insert(15);
 bst.insert(7);
+bst.insert(8)
+bst.insert(6)
 bst.insert(3)
+bst.delete(5)
 // bst.inOrder(bst.root)
-console.log(bst.maxDepth(bst.root));
-
+// console.log(bst.maxDepth(bst.root));
+bst.levelOrder();
 // bst.delete(15)
 // bst.levelOrder(bst.root)
 // bst.levelOrder()
