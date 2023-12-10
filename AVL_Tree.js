@@ -109,7 +109,7 @@ class Node {
 		if (balance > 1 && key > node.left.key) { 
 			node.left = this.leftRotate(node.left); 
 			return this.rightRotate(node); 
-		} 
+		}    
 
 		// Right Left Case 
 		if (balance < -1 && key < node.right.key) { 
