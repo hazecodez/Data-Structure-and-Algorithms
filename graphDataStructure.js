@@ -71,14 +71,14 @@
 //       }
 // }
 // const graph = new Graph()
-// // graph.addVertex('A')
-// // graph.addVertex('B')
-// // graph.addVertex('C')
-// // graph.addEdges("A","B")
-// // graph.addEdges("B","C")
-// // graph.addEdges("C","B")
-// // graph.removeVertex('A')
-// // graph.display()
+// graph.addVertex('A')
+// graph.addVertex('B')
+// graph.addVertex('C')
+// graph.addEdges("A","B")
+// graph.addEdges("B","C")
+// graph.addEdges("C","B")
+// graph.removeVertex('A')
+// graph.display()
 
 
   

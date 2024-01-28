@@ -3,7 +3,7 @@ function sortQuick(array){
     if(array.length < 2){
         return array
     }
-    let left = []
+    let left = [] 
     let right = []
     let pivot = array[array.length-1]
     for(let i =0 ;i<array.length-1;i++){
