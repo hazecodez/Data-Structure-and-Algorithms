@@ -49,7 +49,7 @@ function productOfArray(array) {
 //==================================================================================================================
 
 function contains(obj, value) {
-  for ( let key in obj) {
+  for (let key in obj) {
     if (typeof obj[key] === "object") {
       return contains(obj[key], value);
     }
