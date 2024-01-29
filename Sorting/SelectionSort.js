@@ -26,7 +26,7 @@ function reverse(arr){
         }
         let temp = arr[minIdx];
         arr[minIdx] = arr[i];
-        arr[i] = arr[minIdx]
+        arr[i] = temp
     }
     console.log(arr);
 }

@@ -16,8 +16,8 @@ function sortQuick(array){
     return sortQuick(left).concat(pivot,sortQuick(right))
 }
 
-let array = [22,-88,45,66,75,-99]
-console.log(sortQuick(array));
+// let array = [22,-88,45,66,75,-99]
+// console.log(sortQuick(array));
 
 //=========================================================================================
 
@@ -52,7 +52,7 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
   }
   
   const arr = [8, 20, -2, 4, -6]
-  quickSort(arr)
-  console.log(arr)
+  console.log(quickSort(arr))
+  
   
   //============================================================================
