@@ -81,7 +81,7 @@ class LinkedList {
     } else {
       let removeNode;
       let prev = this.head;
-      while(prev.next && prev.next.value !== value) {
+      while (prev.next && prev.next.value !== value) {
         prev = prev.next;
       }
       removeNode = prev.next;
@@ -89,21 +89,21 @@ class LinkedList {
     }
     this.size--;
   }
-  reverse(){
-    if(this.isEmpty()) {
-        return null;
+  reverse() {
+    if (this.isEmpty()) {
+      return null;
     }
     let prev = null;
     let curr = this.head;
     let next;
-    while(curr) {
-        next = curr.next;
-        curr.next = prev;
-        prev = curr;
-        curr = next;
+    while (curr) {
+      next = curr.next;
+      curr.next = prev;
+      prev = curr;
+      curr = next;
     }
     this.head = prev;
-    this.tail = next
+    this.tail = next;
   }
   print() {
     if (this.isEmpty()) {
@@ -129,5 +129,5 @@ list.prepend(50);
 list.insert(100, 3);
 
 console.log(list.print());
-list.reverse()
+list.reverse();
 console.log(list.print());

@@ -20,7 +20,6 @@ class LinkedList {
     return this.size;
   }
 
-  insert(value, index) {}
 
   removeFrom(index) {
     if (index > this.size || index < 0) {
