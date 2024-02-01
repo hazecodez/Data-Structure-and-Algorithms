@@ -44,6 +44,6 @@ function mergeReverseArr(left,right){
     }
     return [...reversed, ...left, ...right]
 }
-console.log(reverseArray(arr));
+// console.log(reverseArray(arr));
 
 
