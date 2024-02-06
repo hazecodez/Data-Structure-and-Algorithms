@@ -35,6 +35,10 @@ class LinkedList {
     }
     this.size++;
   }
+
+//==============================================================================
+//reverse linked list using recurssion.
+
   reverseTheList(curr) {
     if (this.size < 2) return this.head;
 
@@ -50,6 +54,9 @@ class LinkedList {
     curr.next = prev;
     return this.recursiveReverse(next, curr);
   }
+
+//==============================================================================
+
   insert(value, index) {
     if (index > this.size || index < 0) {
       return null;
