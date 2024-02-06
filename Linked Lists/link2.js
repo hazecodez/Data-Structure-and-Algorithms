@@ -35,6 +35,21 @@ class LinkedList {
     }
     this.size++;
   }
+  reverseTheList(curr) {
+    if (this.size < 2) return this.head;
+
+    const reversed = this.recursiveReverse(this.head, null);
+    this.tail = this.head;
+    this.head.next = null;
+    this.head = reversed;
+    return this.head;
+  }
+  recursiveReverse(curr, prev) {
+    if (!curr) return prev;
+    const next = curr.next;
+    curr.next = prev;
+    return this.recursiveReverse(next, curr);
+  }
   insert(value, index) {
     if (index > this.size || index < 0) {
       return null;
@@ -129,5 +144,6 @@ list.prepend(50);
 list.insert(100, 3);
 
 console.log(list.print());
-list.reverse();
+list.reverseTheList()
+
 console.log(list.print());
