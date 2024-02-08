@@ -50,6 +50,22 @@ class DoublyList{
         }
         return values
     }
+    reverseList() {
+        if(this.size < 2) return this.head;
+        const reversed = this.recursiveReverse(this.head,null);
+        this.head.next = null;
+        this.tail = this.head;
+        this.head = reversed;
+        return this.head
+    }
+    recursiveReverse(curr,prev) {
+        if(!curr) return prev
+        prev = curr.prev;
+        const next = curr.next
+        curr.next = prev;
+        curr.prev = next
+        return this.recursiveReverse(next,prev)
+    }
     reversePrint() {
         if(this.isEmpty()) {
             return null;
@@ -68,5 +84,10 @@ const list = new DoublyList()
 list.append(10)
 list.append(20)
 list.prepend(5)
+list.append(27)
+list.append(45)
+list.append(76)
 console.log(list.print());
-console.log(list.reversePrint());
+// console.log(list.reversePrint());
+list.reverseList()
+console.log(list.print());
