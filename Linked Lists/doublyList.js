@@ -60,11 +60,10 @@ class DoublyList{
     }
     recursiveReverse(curr,prev) {
         if(!curr) return prev
-        prev = curr.prev;
         const next = curr.next
         curr.next = prev;
         curr.prev = next
-        return this.recursiveReverse(next,prev)
+        return this.recursiveReverse(next,curr)
     }
     reversePrint() {
         if(this.isEmpty()) {
