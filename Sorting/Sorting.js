@@ -49,26 +49,53 @@ function insertionSort(array) {
     console.log(`Insertion sort :  ${array}`);
 }
 // insertionSort(ArraySam)
+
+
 function split(array) {
     if(array.length < 2) {
         return array
     }
     let mid = Math.floor(array.length/2);
     let left = array.slice(0,mid);
-    let right = array.slice(mid)
-    return mergeSort(split(left) , split(right))
+    let right = array.slice(mid);
+    return mergeSort(split(left),split(right))
 }
-
-function mergeSort(left , right) {
+function mergeSort(left,right) {
     let sorted = []
     while(left.length && right.length) {
-        if(left[0] <= right[0]) {
+        if(left[0] <= right[0] ) {
             sorted.push(left.shift())
         }else {
             sorted.push(right.shift())
         }
     }
-    return [...sorted, ...left, ...right]
+    return [...sorted,...left,...right]
 }
+// console.log(split(ArraySam));
 
-console.log(split(ArraySam));
+function quickSort(array,left = 0, right= array.length-1) {
+    if(left < right) {
+        let pivot = partition(array,left,right);
+        quickSort(array,left,pivot-1);
+        quickSort(array,pivot+1,right);
+    }
+    return array
+}
+function partition(array,left,right){
+    let pivot = array[right];
+    let i = left;
+    for(let j=left; j<right ;j++) {
+        if(array[j] < pivot) {
+            swap(array,i,j);
+            i++
+        }
+    }
+    swap(array,i,right)
+    return i
+}
+function swap(array,i,j){
+    let temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+}
+// console.log(quickSort(ArraySam));
