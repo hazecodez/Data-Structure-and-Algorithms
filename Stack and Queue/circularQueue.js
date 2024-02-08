@@ -17,7 +17,8 @@ class CircularQueue {
   enqueue(value) {
     if (!this.isFull()) {
       this.rear = (this.rear + 1) % this.capacity;
-      this.items[this.rear] = value;
+      this.items[this.length] = value;
+      console.log(this.length);
       this.length++;
       if (this.front === -1) {
         this.front = this.rear;
@@ -39,7 +40,7 @@ class CircularQueue {
     }
   }
   print() {
-    for (let i = this.front; i <= this.rear; i++) {
+    for (let i = this.front; i < this.length; i++) {
       console.log(this.items[i]);
     }
   }
@@ -48,7 +49,8 @@ const circularQueue = new CircularQueue(3);
 circularQueue.enqueue(10);
 circularQueue.enqueue(20);
 circularQueue.enqueue(30);
-circularQueue.enqueue(40);
-circularQueue.print();
-circularQueue.enqueue(60);
+
+circularQueue.dequeue();
+circularQueue.enqueue(45);
+
 circularQueue.print();
