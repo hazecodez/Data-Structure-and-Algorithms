@@ -39,7 +39,7 @@ class LinkedList {
 //==============================================================================
 //reverse linked list using recurssion.
 
-  reverseTheList(curr) {
+  reverseTheList() {
     if (this.size < 2) return this.head;
 
     const reversed = this.recursiveReverse(this.head, null);
