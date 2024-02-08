@@ -1,4 +1,4 @@
-function binary(arr, target, start, end) {
+function binary(arr, target, start = 0, end = arr.length - 1) {
   let mid = Math.floor((start + end) / 2);
   if (arr[mid] === target) {
     arr.splice(mid, 1, 0);
@@ -13,4 +13,4 @@ function binary(arr, target, start, end) {
   }
 }
 let array = [1, 2, 3, 4, 5, 6];
-console.log(binary(array, 5, 0, array.length - 1));
+console.log(binary(array, 5));
