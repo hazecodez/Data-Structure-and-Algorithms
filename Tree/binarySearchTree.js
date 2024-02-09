@@ -38,7 +38,7 @@ class BinarySearchTree{
         }
     }
     //search the given node if it's in tree or not.
-    search(root,value){
+    search(root = this.root,value){
         if(!root){
             return false
         } else {
@@ -170,19 +170,9 @@ class BinarySearchTree{
 }
 const bst = new BinarySearchTree()
 
-bst.insert(10);
-bst.insert(5);
-bst.insert(15);
-bst.insert(7);
-bst.insert(8)
-bst.insert(6)
 bst.insert(3)
-bst.delete(5)
-// bst.inOrder(bst.root)
-// console.log(bst.maxDepth(bst.root));
-bst.levelOrder();
-// bst.delete(15)
-// bst.levelOrder(bst.root)
-// bst.levelOrder()
-// console.log(bst.minValue(bst.root));
-// console.log(bst.maxValue(bst.root));
+bst.insert(76)
+bst.insert(21)
+bst.insert(9)
+bst.insert(2)
+bst.preOrder(bst.root)
