@@ -8,7 +8,7 @@ class trieNode {
 class trieTree {
     constructor() {
         this.root = new trieNode()
-    }
+    } 
     
     insert(word) {
         let current = this.root;

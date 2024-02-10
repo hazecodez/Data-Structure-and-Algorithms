@@ -36,3 +36,5 @@ function heapSort(array) {
 function mergeAndSort(array1 , array2) {
     return heapSort(array1.concat(array2))
 }
+
+console.log(heapSort([3,8,25,1,2,38]));
