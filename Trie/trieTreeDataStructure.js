@@ -12,7 +12,7 @@ class trieTree {
     
     insert(word) {
         let current = this.root; 
-        for(let i=0; i < word.length;i++) {
+        for(let i=0; i < word.length;i++) { 
             const ch = word.charAt(i)
             if(!current.children.has(ch)) {
                 current.children.set(ch, new trieNode())
