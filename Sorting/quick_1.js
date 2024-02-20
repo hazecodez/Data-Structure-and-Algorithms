@@ -1,17 +1,29 @@
-function quick(array) {
-  if (array.length < 2) return array;
-  let pivot = array[array.length - 1];
-  let left = [];
-  let right = [];
-  for (let i = 0; i < array.length - 1; i++) {
-    if (pivot < array[i]) {
-      right.push(array[i]);
-    } else {
-      left.push(array[i]);
-    }
+function quickSort(arr, left = 0, right = arr.length - 1) {
+  if (left < right) {
+    let pivot = partition(arr, left, right);
+    quickSort(arr, left, pivot - 1);
+    quickSort(arr, pivot + 1, right);
   }
-
-  return quick(left).concat(pivot, quick(right));
+  return arr;
 }
 
-console.log(quick([3, 1, 5, 2, 8, 4]));
+function partition(arr, left, right) {
+  let pivot = arr[right];
+  let i = left;
+  for (let j = left; j < right; j++) {
+    if (arr[j] < pivot) {
+      swap(arr, i, j);
+      i++;
+    }
+  }
+  swap(arr, i, right);
+  return i;
+}
+function swap(arr, i, j) {
+  let temp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = temp;
+  return;
+}
+
+console.log(quickSort(["gg",'aa','hello','bye']));
