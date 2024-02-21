@@ -3,20 +3,20 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
     let pivot = partition(arr, left, right);
     quickSort(arr, left, pivot - 1);
     quickSort(arr, pivot + 1, right);
+    return arr;
   }
-  return arr;
 }
 
-function partition(arr, left, right) {
-  let pivot = arr[right];
+function partition(Arr, left, right) {
+  let pivot = Arr[right];
   let i = left;
   for (let j = left; j < right; j++) {
-    if (arr[j] < pivot) {
-      swap(arr, i, j);
+    if (Arr[j] < pivot) {
+      swap(Arr, i, j);
       i++;
     }
   }
-  swap(arr, i, right);
+  swap(Arr, i, right);
   return i;
 }
 function swap(arr, i, j) {
@@ -26,4 +26,4 @@ function swap(arr, i, j) {
   return;
 }
 
-console.log(quickSort(["gg",'aa','hello','bye']));
+console.log(quickSort(['ff','hh','qq','aa','hello']));
