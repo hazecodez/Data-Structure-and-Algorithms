@@ -68,6 +68,6 @@ colTable.display();
 console.log(colTable.get("name"));
 colTable.set("mane", "Clark");
 colTable.set("name", "Diana");
-console.log(colTable.get("mane"));
+console.log(colTable.get("name"));
 colTable.remove("name");
 colTable.display();
