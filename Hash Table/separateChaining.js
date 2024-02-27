@@ -50,15 +50,15 @@ class HashTable {
     }
 }
 const table = new HashTable(5);
-table.insert("name","Hashir");
-table.insert("namee","Rishal");
-table.insert("nameee","kumar");
-table.insert("nameeee","kumaran");
-table.insert("nameeeee","kumari");
-table.insert("school","Anakkara");
-table.insert("Job","Developer")
-table.insert("age",23)
-console.log(table.lookup("Job"))
+// table.insert("name","Hashir");
+// table.insert("namee","Rishal");
+// table.insert("nameee","kumar");
+// table.insert("nameeee","kumaran");
+// table.insert("nameeeee","kumari");
+// table.insert("school","Anakkara");
+// table.insert("Job","Developer")
+// table.insert("age",23)
+// console.log(table.lookup("Job"))
 
 
 //===============separate chaining using array=======================
@@ -91,6 +91,16 @@ class HashTableArray{
         }
         return null;
     }
+    delete(key) {
+        let index = this.hash(key);
+        let bucket = this.buckets[index];
+        if(!bucket) return null;
+        for(let i=0; i<bucket.length; i++) {
+            if(bucket[i].key === key) {
+                bucket.splice(i,1)
+            }
+        }
+    }
     log() {
         console.log(this.buckets);
     }
@@ -99,4 +109,5 @@ class HashTableArray{
 const tableA = new HashTableArray(5);
 tableA.insert("name","Hashir");
 tableA.insert("age",23)
+tableA.delete("name")
 tableA.log()
