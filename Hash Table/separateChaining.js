@@ -59,3 +59,44 @@ table.insert("school","Anakkara");
 table.insert("Job","Developer")
 table.insert("age",23)
 console.log(table.lookup("Job"))
+
+
+//===============separate chaining using array=======================
+
+class HashTableArray{
+    constructor(size) {
+        this.size = size;
+        this.buckets = new Array(size).fill(null).map(()=> [])
+    }
+    hash(key) {
+        let hash = 0;
+        for(let i=0;i<key.length;i++) {
+            hash += key.charCodeAt(i);
+        }
+        return hash % this.size;
+    }
+    insert(key,value) {
+        let index = this.hash(key);
+        this.buckets[index].push({key,value});
+    }
+    lookup(key) {
+        let index = this.hash(key);
+        if(!this.buckets[index]) {
+            return null;
+        }
+        for(const pair of this.buckets[index]) {
+            if(pair.key === key) {
+                return pair.value
+            }
+        }
+        return null;
+    }
+    log() {
+        console.log(this.buckets);
+    }
+}
+
+const tableA = new HashTableArray(5);
+tableA.insert("name","Hashir");
+tableA.insert("age",23)
+tableA.log()
