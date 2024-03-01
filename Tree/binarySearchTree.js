@@ -55,7 +55,7 @@ class BinarySearchTree{
     closest(target){
         let current = this.root;
         let closest = current.value;
-        while(current != null){
+        while(current !== null){
             if(Math.abs(target-closest) > Math.abs(target - current.value)){
                 closest = current.value;
             }
