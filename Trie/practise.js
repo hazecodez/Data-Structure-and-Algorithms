@@ -62,23 +62,23 @@ class trieTree {
   prefix(word) {
     let current = this.root;
     let curr = "";
-    for(let i=0; i<word.length; i++) {
-        if(!current.children.has(word[i])) {
-            return []
-        }
-        curr += word[i];
-        current = current.children.get(word[i])
+    for (let i = 0; i < word.length; i++) {
+      if (!current.children.has(word[i])) {
+        return [];
+      }
+      curr += word[i];
+      current = current.children.get(word[i]);
     }
     let list = [];
     this.suggest(current, list, curr);
     return list;
   }
-  suggest(current,list , curr) {
-    if(current.wordEnd) {
-        list.push(curr)
+  suggest(current, list, curr) {
+    if (current.wordEnd) {
+      list.push(curr);
     }
-    for(const [char,child] of current.children) {
-        this.suggest(child, list, curr + char)
+    for (const [char, child] of current.children) {
+      this.suggest(child, list, curr + char);
     }
   }
 }
@@ -86,7 +86,7 @@ class trieTree {
 const tree = new trieTree();
 tree.insert("hashir");
 tree.insert("sana");
-tree.insert("habeeb")
+tree.insert("habeeb");
 
 // console.log(tree.search("hashir"));
 // tree.display();
